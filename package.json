@@ -43,7 +43,7 @@
     "typescript": "^4.1.5"
   },
   "dependencies": {
-    "@blackglory/types": "^0.2.16",
+    "@blackglory/types": "^0.2.17",
     "delight-rpc": "^0.1.11",
     "micro": "^9.3.5-canary.3"
   }
