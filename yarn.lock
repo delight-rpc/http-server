@@ -303,35 +303,18 @@
   resolved "https://registry.yarnpkg.com/@blackglory/errors/-/errors-1.1.2.tgz#0577f01ca13850049efa0dd729e1a26e77e1dc3a"
   integrity sha512-THXSkTUB5eXSn7Yj01TgizNqw2rRnkNj0t6drNtmGQNJRoh4qLdSD0WUiM6ClGgKTdaBJbAarRqG/6Gn/NjLig==
 
-"@blackglory/types@^0.2.13", "@blackglory/types@^0.2.9":
-  version "0.2.16"
-  resolved "https://registry.yarnpkg.com/@blackglory/types/-/types-0.2.16.tgz#6d7290bd983951d2acec4ee0be6d0cf23d93cfdf"
-  integrity sha512-qpzRIi6DVtKihybvcjBcKPFTXeH3K2qav4F2aKoUlcVA2sCTvC/f5LYk1XsoMUhpZ6IWiH8Jj1Faj3b8nboYbA==
-  dependencies:
-    "@types/node" "^14.14.31"
-    ajv "^7.1.1"
-    extra-dom "^0.2.9"
-
-"@blackglory/types@^0.2.17":
-  version "0.2.17"
-  resolved "https://registry.yarnpkg.com/@blackglory/types/-/types-0.2.17.tgz#3da7be09bbfd71f467a1010923f4265ab423ab58"
-  integrity sha512-/3yVNMhnqnX9Ru3MbbACQM0afXNqMdcrIvvfnLNX+TKsRZQI3K6Rbb52uJW/YciUCQGAP/f2xxCf4kfUna9/aw==
-  dependencies:
-    "@types/node" "^14.14.31"
-    ajv "^7.1.1"
-    extra-dom "^0.2.9"
-
-"@blackglory/types@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@blackglory/types/-/types-0.3.1.tgz#824ff2a004622796a50d96488aa306d1dfba4800"
-  integrity sha512-GQvJiH+gqOxFeYp2IYFL7UOOzuDs+2k7Ak2W9iuYC6+J+7RyeYsBsb1JH7P2tPvq1dYUyT+8nCX3bHaTlZ+kAA==
-  dependencies:
-    ajv "^7.1.1"
-
 "@blackglory/types@^0.4.0":
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/@blackglory/types/-/types-0.4.0.tgz#01fec2b06a0840638abe08f92fc10a076d01a945"
   integrity sha512-x/et9WsavLw84NSCOGgIREmzFRFi+NdD/tpzAPV2CFrrZBVOG2kU6MIl4x7pm7lNb7vY9kMhhATg+1bp8EvqWQ==
+  dependencies:
+    ajv "^7.2.1"
+    justypes "^0.1.1"
+
+"@blackglory/types@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@blackglory/types/-/types-0.4.1.tgz#b21ff92779541d3087ae08025669647d720fa420"
+  integrity sha512-UqERymArscOAlIxqJ7WBEM/MKnWRjyqyn2sIdXiBok/B9Bm5+75iWJFq1NiyDfF41eRI82/5Zo5Cw3sxOY6owQ==
   dependencies:
     ajv "^7.2.1"
     justypes "^0.1.1"
@@ -814,7 +797,7 @@
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.1.tgz#283f669ff76d7b8260df8ab7a4262cc83d988256"
   integrity sha512-fZQQafSREFyuZcdWFAExYjBiCL7AUCdgsk80iO0q4yihYYdcIiH28CcuPTGFgLOCC8RlW49GSQxdHwZP+I7CNg==
 
-"@types/node@*", "@types/node@^14.14.31":
+"@types/node@*":
   version "14.14.31"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.31.tgz#72286bd33d137aa0d152d47ec7c1762563d34055"
   integrity sha512-vFHy/ezP5qI0rFgJ7aQnjDXwAMrG0KqqIH7tQG5PPv3BWBayOPIQNBjVc/P6hhdZfMx51REc6tfDNXHUio893g==
@@ -977,7 +960,7 @@ ajv@^6.10.0, ajv@^6.12.3, ajv@^6.12.4:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-ajv@^7.0.2, ajv@^7.1.1:
+ajv@^7.0.2:
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-7.1.1.tgz#1e6b37a454021fa9941713f38b952fc1c8d32a84"
   integrity sha512-ga/aqDYnUy/o7vbsRTFhhTsNeXiYb5JWDIcRIeZfwRNCefwjNTVYCGdGSUrEmiu3yDK3vFvNbgJxvrQW4JXrYQ==
@@ -1903,14 +1886,14 @@ delayed-stream@~1.0.0:
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
   integrity sha1-3zrhmayt+31ECqrgsp4icrJOxhk=
 
-delight-rpc@^0.1.16:
-  version "0.1.16"
-  resolved "https://registry.yarnpkg.com/delight-rpc/-/delight-rpc-0.1.16.tgz#e9a0c62a1376a8329aa5c88f0679cae03c2c8ba5"
-  integrity sha512-rm8M6qEBpdJZXtO/jhxYzsjA9gm1g5FfZIoIJoSptP00Fy9Q2rUWqKtpU7kpTbo9OdKG6Lo7UbTse3Z5b7nzCA==
+delight-rpc@^0.1.17:
+  version "0.1.17"
+  resolved "https://registry.yarnpkg.com/delight-rpc/-/delight-rpc-0.1.17.tgz#e642491cb29b8bee4a9593589555a7d772309070"
+  integrity sha512-Shb1X6IdN44EK/U5zy4gVUg7sSD4UCwWxHa9SHvH8AVq/gJRz2b/tIvsmcwlPPVMdu34PvSMDFydgVQkfPhiKg==
   dependencies:
     "@blackglory/errors" "^1.1.2"
-    "@blackglory/types" "^0.4.0"
-    json-rpc-proxy "^0.6.11"
+    "@blackglory/types" "^0.4.1"
+    json-rpc-proxy "^0.6.14"
     nanoid "^3.1.22"
 
 depd@~1.1.2:
@@ -2283,14 +2266,6 @@ extglob@^2.0.4:
     regex-not "^1.0.0"
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
-
-extra-dom@^0.2.9:
-  version "0.2.11"
-  resolved "https://registry.yarnpkg.com/extra-dom/-/extra-dom-0.2.11.tgz#e97fadbb237afe289e094d11cbbf955356187456"
-  integrity sha512-4eE7g0UWNRcv3EsNl7u3qzkZ7fNGmx6kXa9mLLHJJOKxgCAmSjTrxX5DEkMe4xZaWi09tZUc0zIwspQF4HJz9g==
-  dependencies:
-    "@blackglory/types" "^0.2.13"
-    iterable-operator "^0.13.2"
 
 extsprintf@1.3.0:
   version "1.3.0"
@@ -2801,6 +2776,11 @@ hosted-git-info@^3.0.6:
   dependencies:
     lru-cache "^6.0.0"
 
+hotypes@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/hotypes/-/hotypes-0.1.4.tgz#c5066f9db3447247418633cef3d2c955e19ac5df"
+  integrity sha512-6xl2Gwd/xTmgG1XKs3faY8bZ84w5bNkoqkakAnii7EiKr6Qpi5aCajYWU1IBIMX4m1HpfoeuKZ1RHmSPuKhi6Q==
+
 html-encoding-sniffer@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/html-encoding-sniffer/-/html-encoding-sniffer-2.0.1.tgz#42a6dc4fd33f00281176e8b23759ca4e4fa185f3"
@@ -3223,13 +3203,6 @@ istanbul-reports@^3.0.2:
   dependencies:
     html-escaper "^2.0.0"
     istanbul-lib-report "^3.0.0"
-
-iterable-operator@^0.13.2:
-  version "0.13.2"
-  resolved "https://registry.yarnpkg.com/iterable-operator/-/iterable-operator-0.13.2.tgz#23bd52cd78ca0c60274ec5ba00b5988ba3790693"
-  integrity sha512-cVygsGfAl4FK+N88sY6CkvOzZCcCPkUZvhjjioGL4QcoUXD8N1aWZzzLYXmT3n2Xl/f4nbijz0Pha9qfIIpPkg==
-  dependencies:
-    "@blackglory/types" "^0.2.9"
 
 jest-changed-files@^26.6.2:
   version "26.6.2"
@@ -3669,20 +3642,21 @@ json-parse-even-better-errors@^2.3.0:
   resolved "https://registry.yarnpkg.com/json-parse-even-better-errors/-/json-parse-even-better-errors-2.3.1.tgz#7c47805a94319928e05777405dc12e1f7a4ee02d"
   integrity sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==
 
-json-rpc-creator@^3.0.10:
-  version "3.0.10"
-  resolved "https://registry.yarnpkg.com/json-rpc-creator/-/json-rpc-creator-3.0.10.tgz#c1f77ca82d06d31b13b2596e722b26099be00331"
-  integrity sha512-50ZYfzA03lM2DzuBV9h7FoON7k8StxojuYukrI9Bd7GEWs09NYZ6MOnhf/6heuM+KLBqPLTsZi6YOUZOw1/zVw==
+json-rpc-creator@^3.0.12:
+  version "3.0.12"
+  resolved "https://registry.yarnpkg.com/json-rpc-creator/-/json-rpc-creator-3.0.12.tgz#6a748d3a5ee05f8df542a4594903ea2dc0f5ddb4"
+  integrity sha512-QFjm5Ie1LUdFFzcRYRfzdTSE1nO1SHYAIruZXxrMtVtJAbPb2GHT/liy9TkCmIKEu/amOU+btn+JU2wD/lGlcQ==
   dependencies:
-    "@blackglory/types" "^0.2.17"
+    "@blackglory/types" "^0.4.0"
 
-json-rpc-proxy@^0.6.11:
-  version "0.6.11"
-  resolved "https://registry.yarnpkg.com/json-rpc-proxy/-/json-rpc-proxy-0.6.11.tgz#cc636b9f7c9cd173a75b4d6cb2a6d13323c11888"
-  integrity sha512-fy8sDBJBfR8ilCQg0tLqUNVjIbqAg2wUGc9FGbvFxfBE7OshcHjKVzps+TnhwKmcp9i+t6bTGbMGiQwUex5imA==
+json-rpc-proxy@^0.6.14:
+  version "0.6.14"
+  resolved "https://registry.yarnpkg.com/json-rpc-proxy/-/json-rpc-proxy-0.6.14.tgz#8157c727acbf547a9902eb856cc388e4b65ff6b2"
+  integrity sha512-+eEEKQfCY8QzeK/pmrOSQSVJnRG3+1VdyJjOgtv2LPOtqnUCvJKy8p1SdDjB2GGiXgsLYRfZOUwVKVOKu0k4Eg==
   dependencies:
-    "@blackglory/types" "^0.3.1"
-    json-rpc-creator "^3.0.10"
+    "@blackglory/types" "^0.4.1"
+    hotypes "^0.1.4"
+    json-rpc-creator "^3.0.12"
 
 json-schema-traverse@^0.4.1:
   version "0.4.1"
