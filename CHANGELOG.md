@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/delight-rpc/http-server/compare/v0.1.6...v0.1.7) (2021-05-14)
+
+
+### Features
+
+* add options.loggerLevel, Level ([8e59ef6](https://github.com/delight-rpc/http-server/commit/8e59ef650ab0f5ea355df319694a617c3b68d4fb))
+
 ### [0.1.6](https://github.com/delight-rpc/http-server/compare/v0.1.5...v0.1.6) (2021-03-17)
 
 ### [0.1.5](https://github.com/delight-rpc/http-server/compare/v0.1.4...v0.1.5) (2021-03-17)
