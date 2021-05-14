@@ -20,14 +20,14 @@ export function createServer<IAPI extends object>(
       const id = counter.next()
       const startTime = Date.now()
       const result = await createResponse(API, rpcReq)
-      const elapsed = Date.now() - startTime
+      const endTime = Date.now()
 
-      logger.info({
+      logger.info(() => ({
         id
       , message: rpcReq.method
-      , timestamp: Date.now()
-      , elapsed
-      })
+      , timestamp: endTime
+      , elapsed: endTime - startTime
+      }))
 
       return result
     } else {
