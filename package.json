@@ -50,7 +50,9 @@
   },
   "dependencies": {
     "@blackglory/types": "^0.4.2",
+    "chalk": "^4.1.1",
     "delight-rpc": "^0.1.18",
+    "extra-logger": "^0.5.4",
     "micro": "^9.3.5-canary.3"
   }
 }

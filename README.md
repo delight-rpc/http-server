@@ -11,5 +11,20 @@ yarn add @delight-rpc/http-server
 ## API
 
 ```ts
-function createServer<IAPI extends object>(API: IAPI): http.Server
+enum Level {
+  Trace
+, Debug
+, Info
+, Warn
+, Error
+, Fatal
+, None
+}
+```
+
+```ts
+function createServer<IAPI extends object>(
+  API: IAPI
+, options: { loggerLevel: Level }
+): http.Server
 ```

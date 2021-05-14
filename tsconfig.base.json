@@ -3,9 +3,11 @@
     "target": "ES2019"
   , "module": "CommonJS"
   , "strict": true
+  , "esModuleInterop": true
   , "baseUrl": "."
   , "paths": {
       "@src/*": ["src/*"]
+    , "@utils/*": ["src/utils/*"]
     , "@test/*": ["__tests__/*"]
     }
   }
