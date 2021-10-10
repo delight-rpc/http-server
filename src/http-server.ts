@@ -8,7 +8,7 @@ import { Level, createCustomLogger } from './logger'
 export { Level } from './logger'
 
 export function createServer<IAPI extends object>(
-  API: IAPI
+  api: IAPI
 , options: { loggerLevel: Level }
 ): http.Server {
   const counter = new Counter()
@@ -19,15 +19,15 @@ export function createServer<IAPI extends object>(
     if (isJsonRpcRequest(rpcReq)) {
       const id = counter.next()
       const startTime = Date.now()
-      const result = await createResponse(API, rpcReq)
+      const result = await createResponse(api, rpcReq)
       const endTime = Date.now()
 
-      logger.info(() => ({
+      logger.info({
         id
       , message: rpcReq.method
       , timestamp: endTime
       , elapsed: endTime - startTime
-      }))
+      })
 
       return result
     } else {

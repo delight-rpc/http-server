@@ -22,9 +22,11 @@ enum Level {
 }
 ```
 
+### createServer
+
 ```ts
 function createServer<IAPI extends object>(
-  API: IAPI
+  api: IAPI
 , options: { loggerLevel: Level }
 ): http.Server
 ```
