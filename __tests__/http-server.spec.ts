@@ -1,7 +1,7 @@
 import { startService, stopService, getAddress } from '@test/utils'
 import { fetch } from 'extra-fetch'
-import { post } from 'extra-request'
-import { url, json } from 'extra-request/lib/es2018/transformers'
+import { get, post } from 'extra-request'
+import { url, pathname, json } from 'extra-request/lib/es2018/transformers'
 import { createClient, MethodNotFound } from 'delight-rpc'
 import { getErrorPromise } from 'return-style'
 
@@ -48,5 +48,15 @@ describe('server', () => {
     const err = await getErrorPromise(client.typo('hello'))
 
     expect(err).toBeInstanceOf(MethodNotFound)
+  })
+
+  test('health check endpoint', async () => {
+    const result = await fetch(get(
+      url(getAddress())
+    , pathname('/health')
+    ))
+
+    expect(result.status).toBe(200)
+    expect(await result.text()).toBe('OK')
   })
 })

@@ -11,7 +11,10 @@ export function getAddress() {
 }
 
 export async function startService(api: object): Promise<void> {
-  server = createServer(api, { loggerLevel: Level.None })
+  server = createServer(api, {
+    loggerLevel: Level.None
+  , healthCheckEndpoint: true
+  })
   return new Promise<void>(resolve => {
     server.listen({ host: 'localhost', port: 0 }, () => {
       const addressInfo = server.address()

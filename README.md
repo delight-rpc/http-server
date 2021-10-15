@@ -27,6 +27,9 @@ enum Level {
 ```ts
 function createServer<IAPI extends object>(
   api: IAPI
-, options: { loggerLevel: Level }
+, options: {
+    loggerLevel: Level
+  , healthCheckEndpoint: boolean = false
+  }
 ): http.Server
 ```

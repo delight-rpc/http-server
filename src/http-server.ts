@@ -9,12 +9,17 @@ export { Level } from './logger'
 
 export function createServer<IAPI extends object>(
   api: IAPI
-, options: { loggerLevel: Level }
+, options: {
+    loggerLevel: Level
+  , healthCheckEndpoint?: boolean
+  }
 ): http.Server {
   const counter = new Counter()
   const logger = createCustomLogger(options.loggerLevel)
 
   const handler: RequestHandler = async req => {
+    if (options.healthCheckEndpoint && req.url === '/health') return 'OK'
+
     const rpcReq = await json(req)
     if (isJsonRpcRequest(rpcReq)) {
       const id = counter.next()
