@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.11](https://github.com/delight-rpc/http-server/compare/v0.1.10...v0.1.11) (2021-10-15)
+
+
+### Features
+
+* add options.healthCheckEndpoint ([9265cd4](https://github.com/delight-rpc/http-server/commit/9265cd46fcad4f60b80e8a0d3fc12e56a85b0495))
+
 ### [0.1.10](https://github.com/delight-rpc/http-server/compare/v0.1.9...v0.1.10) (2021-10-10)
 
 ### [0.1.9](https://github.com/delight-rpc/http-server/compare/v0.1.8...v0.1.9) (2021-07-03)
