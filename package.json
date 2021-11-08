@@ -7,6 +7,7 @@
     "lib"
   ],
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "repository": "git@github.com:delight-rpc/http-server.git",
   "author": "BlackGlory <woshenmedoubuzhidao@blackglory.me>",
   "license": "MIT",
