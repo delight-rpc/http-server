@@ -6,7 +6,6 @@ it needs to be used with the client library [@delight-rpc/http-client].
 [@delight-rpc/http-client]: https://www.npmjs.com/package/@delight-rpc/http-client
 
 ## Install
-
 ```sh
 npm install --save @delight-rpc/http-server
 # or
@@ -14,7 +13,6 @@ yarn add @delight-rpc/http-server
 ```
 
 ## Usage
-
 ```ts
 // api.d.ts
 interface IAPI {
@@ -39,7 +37,6 @@ server.listen({ host: 'localhost', port: 8080 }, () => {
 ```
 
 ## API
-
 ```ts
 enum Level {
   Trace
@@ -53,7 +50,6 @@ enum Level {
 ```
 
 ### createServer
-
 ```ts
 function createServer<IAPI extends object>(
   api: IAPI
