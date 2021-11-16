@@ -38,8 +38,8 @@
     "@commitlint/config-conventional": "^14.1.0",
     "@types/jest": "^27.0.2",
     "@types/node": "^16.11.7",
-    "@typescript-eslint/eslint-plugin": "^5.3.1",
-    "@typescript-eslint/parser": "^5.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
     "cross-env": "^7.0.3",
     "eslint": "8.2.0",
     "extra-fetch": "^1.8.2",
@@ -57,7 +57,7 @@
   "dependencies": {
     "@blackglory/types": "^0.5.2",
     "chalk": "^4.1.2",
-    "delight-rpc": "^0.1.21",
+    "delight-rpc": "^0.2.0",
     "extra-logger": "^0.5.5",
     "micro": "^9.3.5-canary.3"
   }
