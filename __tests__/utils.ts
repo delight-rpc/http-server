@@ -21,7 +21,6 @@ export async function startService(api: object): Promise<void> {
       assert(isObject(addressInfo))
 
       address = getAddressFromAddressInfo(addressInfo)
-      console.log(address)
       resolve()
     })
   })
