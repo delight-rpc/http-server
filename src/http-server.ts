@@ -1,6 +1,5 @@
 import * as http from 'http'
-import { isJsonRpcRequest } from '@blackglory/types'
-import { createResponse } from 'delight-rpc'
+import * as DelightRPC from 'delight-rpc'
 import { RequestHandler, json, createError } from 'micro'
 import micro from 'micro'
 import { Counter } from '@utils/counter'
@@ -20,16 +19,16 @@ export function createServer<IAPI extends object>(
   const handler: RequestHandler = async req => {
     if (options.healthCheckEndpoint && req.url === '/health') return 'OK'
 
-    const rpcReq = await json(req)
-    if (isJsonRpcRequest(rpcReq)) {
+    const request = await json(req)
+    if (DelightRPC.isRequest(request)) {
       const id = counter.next()
       const startTime = Date.now()
-      const result = await createResponse(api, rpcReq)
+      const result = await DelightRPC.createResponse(api, request)
       const endTime = Date.now()
 
       logger.info({
         id
-      , message: rpcReq.method
+      , message: JSON.stringify(request.method)
       , timestamp: endTime
       , elapsed: endTime - startTime
       })

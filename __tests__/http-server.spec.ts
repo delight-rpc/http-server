@@ -2,7 +2,7 @@ import { startService, stopService, getAddress } from '@test/utils'
 import { fetch } from 'extra-fetch'
 import { get, post } from 'extra-request'
 import { url, pathname, json } from 'extra-request/lib/es2018/transformers'
-import { createClient, MethodNotFound } from 'delight-rpc'
+import { createClient, MethodNotAvailable } from 'delight-rpc'
 import { getErrorPromise } from 'return-style'
 
 interface API {
@@ -47,7 +47,7 @@ describe('server', () => {
     // @ts-ignore
     const err = await getErrorPromise(client.typo('hello'))
 
-    expect(err).toBeInstanceOf(MethodNotFound)
+    expect(err).toBeInstanceOf(MethodNotAvailable)
   })
 
   test('health check endpoint', async () => {
