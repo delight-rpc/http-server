@@ -58,6 +58,7 @@
   "dependencies": {
     "@blackglory/types": "^0.5.2",
     "chalk": "^4.1.2",
+    "extra-generator": "^0.2.14",
     "extra-logger": "^0.5.5",
     "micro": "^9.3.5-canary.3"
   },

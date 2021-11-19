@@ -2,8 +2,8 @@ import * as http from 'http'
 import * as DelightRPC from 'delight-rpc'
 import { RequestHandler, json, createError } from 'micro'
 import micro from 'micro'
-import { Counter } from '@utils/counter'
 import { Level, createCustomLogger } from './logger'
+import { countup } from 'extra-generator'
 export { Level } from './logger'
 
 export function createServer<IAPI extends object>(
@@ -13,7 +13,7 @@ export function createServer<IAPI extends object>(
   , healthCheckEndpoint?: boolean
   }
 ): http.Server {
-  const counter = new Counter()
+  const counter = countup(1, Infinity)
   const logger = createCustomLogger(options.loggerLevel)
 
   const handler: RequestHandler = async req => {
@@ -21,7 +21,9 @@ export function createServer<IAPI extends object>(
 
     const request = await json(req)
     if (DelightRPC.isRequest(request)) {
-      const id = counter.next()
+      // https://github.com/microsoft/TypeScript/issues/33353
+      const id = counter.next().value as number
+
       const startTime = Date.now()
       const result = await DelightRPC.createResponse(api, request)
       const endTime = Date.now()
