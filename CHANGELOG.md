@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/delight-rpc/http-server/compare/v1.0.0...v2.0.0) (2021-12-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* - The minimum version is Node.js v16
+
+* upgrade dependencies ([9a65dec](https://github.com/delight-rpc/http-server/commit/9a65dec9c81eb1224dc516666611061383a6627a))
+
 ## [1.0.0](https://github.com/delight-rpc/http-server/compare/v0.1.14...v1.0.0) (2021-11-19)
 
 
