@@ -532,13 +532,6 @@
   dependencies:
     justypes "^0.1.4"
 
-"@blackglory/types@^0.5.2":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@blackglory/types/-/types-0.5.2.tgz#4747d650d8c1a707a3e86110fdaa0fde7e222a0c"
-  integrity sha512-ChGzGwLl8BgpwdrlcafM/umpw7sFEan5ALhvoaOXVXZwo5KS1mOagTHMOFnQfGnlcc+R+VliSFyoiDLIUS2nIA==
-  dependencies:
-    justypes "^0.1.6"
-
 "@blackglory/types@^0.6.0":
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/@blackglory/types/-/types-0.6.2.tgz#eb01f3275a0c5e8ac0e855b5642b5b2bf1c0f7d7"
@@ -551,6 +544,14 @@
   version "0.6.3"
   resolved "https://registry.yarnpkg.com/@blackglory/types/-/types-0.6.3.tgz#14a29dd859723a1912d44e33256d05892df500e8"
   integrity sha512-ERWnzuxiOceKG+F1/SgG2sWr2tzB+9FjvfrdKNNNTc273BeNe41MlmYuY3RhT9tlc00XdF3+E5tAAPCLDl/FvQ==
+  dependencies:
+    justypes "^0.1.6"
+    lodash.isplainobject "^4.0.6"
+
+"@blackglory/types@^0.6.4":
+  version "0.6.4"
+  resolved "https://registry.yarnpkg.com/@blackglory/types/-/types-0.6.4.tgz#ba511c58d4a8cf321bfc34c4b3c94e8a9b3341bd"
+  integrity sha512-QtiPJllbKOXHbX9S/h2NsUbP+vgm6J5w2oQI4N4IuoTdzBbQJZNkcHTf2FeD/1yi/xhzEVdR0L4ZKfLlcmAJbw==
   dependencies:
     justypes "^0.1.6"
     lodash.isplainobject "^4.0.6"
@@ -2021,7 +2022,7 @@ copy-descriptor@^0.1.0:
   resolved "https://registry.yarnpkg.com/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
   integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
 
-core-js@^3.19.3:
+core-js@^3.20.0:
   version "3.20.0"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.20.0.tgz#1c5ac07986b8d15473ab192e45a2e115a4a95b79"
   integrity sha512-KjbKU7UEfg4YPpskMtMXPhUKn7m/1OdTHTVjy09ScR2LVaoUXe8Jh0UdvN2EKUR6iKTJph52SJP95mAB0MnVLQ==
@@ -2605,16 +2606,16 @@ extglob@^2.0.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-extra-fetch@^1.8.3:
-  version "1.8.3"
-  resolved "https://registry.yarnpkg.com/extra-fetch/-/extra-fetch-1.8.3.tgz#ec8889bfb5137a36c0336af7d6eb861f29f29111"
-  integrity sha512-jXF10956VHTI/6tvbG67q9d9s+2EJz96noqOdXnwNkS+loSm97VYvIB/1C2NVeVh6Evd221zluuPpSZ/UfoYuA==
+extra-fetch@^1.8.4:
+  version "1.8.4"
+  resolved "https://registry.yarnpkg.com/extra-fetch/-/extra-fetch-1.8.4.tgz#18c2f45aba8ef0192bbe69480dee8f1dbd982b0d"
+  integrity sha512-QfJ4OVF7SLYr9O7wzsAVykECgHGMYyKCjJP+Y023/LjyzbYdoH7C7zKoqJDz1llcBvkI1PAh2iUZ9w4HRIZWrA==
   dependencies:
     "@blackglory/node-fetch" "^1.0.0"
-    "@blackglory/types" "^0.5.2"
+    "@blackglory/types" "^0.6.3"
     abort-controller "^3.0.0"
     chalk "^4.1.2"
-    core-js "^3.19.3"
+    core-js "^3.20.0"
     domexception "^2.0.1"
     eventsource "^1.1.0"
     extra-logger "^0.5.5"
@@ -2648,13 +2649,13 @@ extra-logger@^0.5.5:
     "@blackglory/types" "^0.4.6"
     justypes "^0.1.4"
 
-extra-request@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/extra-request/-/extra-request-3.0.3.tgz#5418a6b6ae556d94c40c3fd50318766a35ae9737"
-  integrity sha512-jm/LnVW35wGJFBqpHJ1KdCg0MXS76JfHjSHWUSLIBnxHNFeiwuXd0WrcHttopIMNkzWO7YqGZz1H6o9SCSJ9ZQ==
+extra-request@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/extra-request/-/extra-request-4.0.1.tgz#3ad64b91250c792e2c3f35a37dfe3dee3c575c8e"
+  integrity sha512-vi2u0sPrwByPI6PEdja6vDSAAd2JEweuaxQBr1InkSk3FS6abqPrLa1/7kuSOb4E/1m078KeFMM8z9q3hLDlMg==
   dependencies:
     "@blackglory/errors" "^1.1.2"
-    "@blackglory/types" "^0.5.2"
+    "@blackglory/types" "^0.6.4"
     js-base64 "^3.7.2"
     justypes "^0.1.6"
     papaparse "^5.3.1"
