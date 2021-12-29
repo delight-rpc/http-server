@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/delight-rpc/http-server/compare/v2.0.1...v2.1.0) (2021-12-29)
+
+
+### Features
+
+* add parameter validators support ([82c494a](https://github.com/delight-rpc/http-server/commit/82c494a07a7ea83dacae3bcedb11eadca9ebdeec))
+
 ### [2.0.1](https://github.com/delight-rpc/http-server/compare/v2.0.0...v2.0.1) (2021-12-17)
 
 ## [2.0.0](https://github.com/delight-rpc/http-server/compare/v1.0.0...v2.0.0) (2021-12-16)
