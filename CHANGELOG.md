@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/delight-rpc/http-server/compare/v2.1.0...v3.0.0) (2022-01-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* Rename `options.parametersValidators` to `options.parameterValidators`.
+
+* rename parameters ([7d379bc](https://github.com/delight-rpc/http-server/commit/7d379bc8e633f09a3a1d0e0acefa4770d7fb769b))
+
 ## [2.1.0](https://github.com/delight-rpc/http-server/compare/v2.0.1...v2.1.0) (2021-12-29)
 
 
