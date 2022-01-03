@@ -11,7 +11,7 @@ export function createServer<IAPI extends object>(
 , options: {
     loggerLevel: Level
   , healthCheckEndpoint?: boolean
-  , parametersValidators?: DelightRPC.ParameterValidators<IAPI>
+  , parameterValidators?: DelightRPC.ParameterValidators<IAPI>
   }
 ): http.Server {
   const counter = countup(1, Infinity)
@@ -29,7 +29,7 @@ export function createServer<IAPI extends object>(
       const result = await DelightRPC.createResponse(
         api
       , request
-      , options.parametersValidators
+      , options.parameterValidators
       )
       const endTime = Date.now()
 
