@@ -7,7 +7,7 @@ import { countup } from 'extra-generator'
 export { Level } from './logger'
 
 export function createServer<IAPI extends object>(
-  api: IAPI
+  api: DelightRPC.ImplementationOf<IAPI>
 , options: {
     loggerLevel: Level
   , healthCheckEndpoint?: boolean
