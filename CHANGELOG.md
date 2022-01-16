@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://github.com/delight-rpc/http-server/compare/v3.0.1...v3.1.0) (2022-01-16)
+
+
+### Features
+
+* add cache-control header ([4d23608](https://github.com/delight-rpc/http-server/commit/4d23608be73405f90adffc6cfbe09e324911798d))
+
 ### [3.0.1](https://github.com/delight-rpc/http-server/compare/v3.0.0...v3.0.1) (2022-01-09)
 
 ## [3.0.0](https://github.com/delight-rpc/http-server/compare/v2.1.0...v3.0.0) (2022-01-03)
