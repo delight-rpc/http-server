@@ -17,8 +17,11 @@ export function createServer<IAPI extends object>(
   const counter = countup(1, Infinity)
   const logger = createCustomLogger(options.loggerLevel)
 
-  const handler: RequestHandler = async req => {
-    if (options.healthCheckEndpoint && req.url === '/health') return 'OK'
+  const handler: RequestHandler = async (req, res) => {
+    res.setHeader('cache-control', 'no-store')
+    if (options.healthCheckEndpoint && req.url === '/health') {
+      return 'OK'
+    }
 
     const request = await json(req)
     if (DelightRPC.isRequest(request)) {
