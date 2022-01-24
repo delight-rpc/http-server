@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.2.0](https://github.com/delight-rpc/http-server/compare/v3.1.0...v3.2.0) (2022-01-24)
+
+
+### Features
+
+* add expectedVersion support ([ed305f9](https://github.com/delight-rpc/http-server/commit/ed305f9543c12ae298da4a6fd616da91609a91da))
+
 ## [3.1.0](https://github.com/delight-rpc/http-server/compare/v3.0.1...v3.1.0) (2022-01-16)
 
 
