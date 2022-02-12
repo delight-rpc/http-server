@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.0.1](https://github.com/delight-rpc/http-server/compare/v4.0.0...v4.0.1) (2022-02-12)
+
+
+### Bug Fixes
+
+* error message ([099d49a](https://github.com/delight-rpc/http-server/commit/099d49a4cbd108bd25fcdb027e5524422fdb0f17))
+
 ## [4.0.0](https://github.com/delight-rpc/http-server/compare/v3.2.0...v4.0.0) (2022-02-10)
 
 
