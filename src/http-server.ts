@@ -47,7 +47,7 @@ export function createServer<IAPI extends object>(
 
       return result
     } else {
-      throw createError(400, 'The payload is not a valid JSON-RPC 2.0 object')
+      throw createError(400, 'The payload is not a valid Delight RPC request.')
     }
   }
 
