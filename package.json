@@ -57,7 +57,7 @@
     "chalk": "^4.1.2",
     "extra-generator": "^0.2.15",
     "extra-logger": "^0.5.5",
-    "micro": "^9.3.5-canary.3"
+    "fastify": "^3.27.2"
   },
   "peerDependencies": {
     "delight-rpc": "^2.0.0"

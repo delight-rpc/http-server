@@ -31,9 +31,7 @@ const server = createServer(api, {
 , healthCheckEndpoint: true
 })
 
-server.listen({ host: 'localhost', port: 8080 }, () => {
-  console.log(server.address())
-})
+server.listen(8080, address => console.log(address))
 ```
 
 ## API
@@ -59,5 +57,5 @@ function createServer<IAPI extends object>(
   , parameterValidators?: DelightRPC.ParameterValidators<IAPI>
   , version?: `${number}.${number}.${number}`
   }
-): http.Server
+): FastifyInstance
 ```

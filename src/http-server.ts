@@ -1,10 +1,8 @@
-import * as http from 'http'
 import * as DelightRPC from 'delight-rpc'
-import { RequestHandler, json, createError } from 'micro'
-import micro from 'micro'
 import { Level, createCustomLogger } from './logger'
 import { countup } from 'extra-generator'
 export { Level } from './logger'
+import fastify, { FastifyInstance } from 'fastify'
 
 export function createServer<IAPI extends object>(
   api: DelightRPC.ImplementationOf<IAPI>
@@ -14,17 +12,24 @@ export function createServer<IAPI extends object>(
   , parameterValidators?: DelightRPC.ParameterValidators<IAPI>
   , version?: `${number}.${number}.${number}`
   }
-): http.Server {
+): FastifyInstance {
   const counter = countup(1, Infinity)
   const logger = createCustomLogger(options.loggerLevel)
 
-  const handler: RequestHandler = async (req, res) => {
-    res.setHeader('cache-control', 'no-store')
-    if (options.healthCheckEndpoint && req.url === '/health') {
-      return 'OK'
-    }
+  const server = fastify()
 
-    const request = await json(req)
+  server.addHook('onRequest', async (req, reply) => {
+    reply.headers({ 'Cache-Control': 'no-store' })
+  })
+
+  if (options.healthCheckEndpoint) {
+    server.get('/health', async (req, reply) => {
+      return 'OK'
+    })
+  }
+
+  server.post('/', async (req, reply) => {
+    const request = req.body
     if (DelightRPC.isRequest(request)) {
       // https://github.com/microsoft/TypeScript/issues/33353
       const id = counter.next().value as number
@@ -45,11 +50,11 @@ export function createServer<IAPI extends object>(
       , elapsed: endTime - startTime
       })
 
-      return result
+      reply.status(200).send(result)
     } else {
-      throw createError(400, 'The payload is not a valid Delight RPC request.')
+      reply.status(400).send('The payload is not a valid Delight RPC request.')
     }
-  }
+  })
 
-  return new http.Server(micro(handler))
+  return server
 }
