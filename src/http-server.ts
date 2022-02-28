@@ -1,8 +1,8 @@
 import * as DelightRPC from 'delight-rpc'
-import { Level, createCustomLogger } from './logger'
-import { countup } from 'extra-generator'
-export { Level } from './logger'
+import { Logger, TerminalTransport, Level } from 'extra-logger'
 import fastify, { FastifyInstance } from 'fastify'
+
+export { Level } from 'extra-logger'
 
 export function createServer<IAPI extends object>(
   api: DelightRPC.ImplementationOf<IAPI>
@@ -13,8 +13,10 @@ export function createServer<IAPI extends object>(
   , version?: `${number}.${number}.${number}`
   }
 ): FastifyInstance {
-  const counter = countup(1, Infinity)
-  const logger = createCustomLogger(options.loggerLevel)
+  const logger = new Logger({
+    level: options.loggerLevel
+  , transport: new TerminalTransport({})
+  })
 
   const server = fastify()
 
@@ -31,26 +33,14 @@ export function createServer<IAPI extends object>(
   server.post('/', async (req, reply) => {
     const request = req.body
     if (DelightRPC.isRequest(request)) {
-      // https://github.com/microsoft/TypeScript/issues/33353
-      const id = counter.next().value as number
-
-      const startTime = Date.now()
-      const result = await DelightRPC.createResponse(
+      const response = await logger.infoTime(JSON.stringify(request.method), () => DelightRPC.createResponse(
         api
       , request
       , options.parameterValidators
       , options.version
-      )
-      const endTime = Date.now()
+      ))
 
-      logger.info({
-        id
-      , message: JSON.stringify(request.method)
-      , timestamp: endTime
-      , elapsed: endTime - startTime
-      })
-
-      reply.status(200).send(result)
+      reply.status(200).send(response)
     } else {
       reply.status(400).send('The payload is not a valid Delight RPC request.')
     }

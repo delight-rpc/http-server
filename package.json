@@ -55,8 +55,7 @@
   "dependencies": {
     "@blackglory/types": "^0.6.5",
     "chalk": "^4.1.2",
-    "extra-generator": "^0.2.15",
-    "extra-logger": "^0.5.5",
+    "extra-logger": "^0.6.2",
     "fastify": "^3.27.2"
   },
   "peerDependencies": {
