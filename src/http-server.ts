@@ -25,20 +25,21 @@ export function createServer<IAPI extends object>(
   })
 
   if (options.healthCheckEndpoint) {
-    server.get('/health', async (req, reply) => {
-      return 'OK'
-    })
+    server.get('/health', async (req, reply) => 'OK')
   }
 
   server.post('/', async (req, reply) => {
     const request = req.body
     if (DelightRPC.isRequest(request)) {
-      const response = await logger.infoTime(JSON.stringify(request.method), () => DelightRPC.createResponse(
-        api
-      , request
-      , options.parameterValidators
-      , options.version
-      ))
+      const response = await logger.infoTime(
+        () => JSON.stringify(request.method)
+      , () => DelightRPC.createResponse(
+          api
+        , request
+        , options.parameterValidators
+        , options.version
+        )
+      )
 
       reply.status(200).send(response)
     } else {
