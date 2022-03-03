@@ -32,7 +32,7 @@ export function createServer<IAPI extends object>(
     const request = req.body
     if (DelightRPC.isRequest(request)) {
       const response = await logger.infoTime(
-        () => JSON.stringify(request.method)
+        () => request.method.join('.')
       , () => DelightRPC.createResponse(
           api
         , request
