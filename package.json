@@ -54,7 +54,8 @@
   },
   "dependencies": {
     "extra-logger": "^0.6.4",
-    "fastify": "^3.27.4"
+    "fastify": "^3.27.4",
+    "fastify-cors": "^6.0.3"
   },
   "peerDependencies": {
     "delight-rpc": "^2.0.0"

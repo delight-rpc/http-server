@@ -53,7 +53,8 @@ function createServer<IAPI extends object>(
   api: DelightRPC.ImplementationOf<IAPI>
 , options: {
     loggerLevel: Level
-  , healthCheckEndpoint: boolean = false
+  , cors?: boolean = false
+  , healthCheckEndpoint?: boolean = false
   , parameterValidators?: DelightRPC.ParameterValidators<IAPI>
   , version?: `${number}.${number}.${number}`
   }

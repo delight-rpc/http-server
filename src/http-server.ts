@@ -1,6 +1,7 @@
 import * as DelightRPC from 'delight-rpc'
 import { Logger, TerminalTransport, Level } from 'extra-logger'
 import fastify, { FastifyInstance } from 'fastify'
+import cors from 'fastify-cors'
 
 export { Level } from 'extra-logger'
 
@@ -8,6 +9,7 @@ export function createServer<IAPI extends object>(
   api: DelightRPC.ImplementationOf<IAPI>
 , options: {
     loggerLevel: Level
+  , cors?: boolean
   , healthCheckEndpoint?: boolean
   , parameterValidators?: DelightRPC.ParameterValidators<IAPI>
   , version?: `${number}.${number}.${number}`
@@ -23,6 +25,10 @@ export function createServer<IAPI extends object>(
   server.addHook('onRequest', async (req, reply) => {
     reply.headers({ 'Cache-Control': 'no-store' })
   })
+
+  if (options.cors) {
+    server.register(cors, { origin: true })
+  }
 
   if (options.healthCheckEndpoint) {
     server.get('/health', async (req, reply) => 'OK')
