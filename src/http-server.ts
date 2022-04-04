@@ -36,9 +36,15 @@ export function createServer<IAPI extends object>(
 
   server.post('/', async (req, reply) => {
     const request = req.body
-    if (DelightRPC.isRequest(request)) {
+    if (DelightRPC.isRequest(request) || DelightRPC.isBatchRequest(request)) {
       const response = await logger.infoTime(
-        () => request.method.join('.')
+        () => {
+          if (DelightRPC.isRequest(request)) {
+            return request.method.join('.')
+          } else {
+            return request.requests.map(x => x.method.join('.')).join(', ')
+          }
+        }
       , () => DelightRPC.createResponse(
           api
         , request
