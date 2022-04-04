@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.1.2](https://github.com/delight-rpc/http-server/compare/v5.1.1...v5.1.2) (2022-04-04)
+
+
+### Bug Fixes
+
+* createServer for batch requests ([75182c5](https://github.com/delight-rpc/http-server/commit/75182c567ac569727c75dbf60856c670f7d763c4))
+
 ### [5.1.1](https://github.com/delight-rpc/http-server/compare/v5.1.0...v5.1.1) (2022-03-21)
 
 
