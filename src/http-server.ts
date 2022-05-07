@@ -1,22 +1,29 @@
 import * as DelightRPC from 'delight-rpc'
 import { Logger, TerminalTransport, Level } from 'extra-logger'
 import fastify, { FastifyInstance } from 'fastify'
-import cors from 'fastify-cors'
+import fastifyCORS from '@fastify/cors'
+import { isNull } from '@blackglory/prelude'
 
 export { Level } from 'extra-logger'
 
 export function createServer<IAPI extends object>(
   api: DelightRPC.ImplementationOf<IAPI>
-, options: {
-    loggerLevel: Level
-  , cors?: boolean
-  , healthCheckEndpoint?: boolean
-  , parameterValidators?: DelightRPC.ParameterValidators<IAPI>
-  , version?: `${number}.${number}.${number}`
-  }
+, {
+    loggerLevel = Level.None
+  , healthCheckEndpoint = false
+  , cors = false
+  , parameterValidators
+  , version
+  }: {
+    loggerLevel?: Level
+    cors?: boolean
+    healthCheckEndpoint?: boolean
+    parameterValidators?: DelightRPC.ParameterValidators<IAPI>
+    version?: `${number}.${number}.${number}`
+  } = {}
 ): FastifyInstance {
   const logger = new Logger({
-    level: options.loggerLevel
+    level: loggerLevel
   , transport: new TerminalTransport({})
   })
 
@@ -26,11 +33,11 @@ export function createServer<IAPI extends object>(
     reply.headers({ 'Cache-Control': 'no-store' })
   })
 
-  if (options.cors) {
-    server.register(cors, { origin: true })
+  if (cors) {
+    server.register(fastifyCORS, { origin: true })
   }
 
-  if (options.healthCheckEndpoint) {
+  if (healthCheckEndpoint) {
     server.get('/health', async (req, reply) => 'OK')
   }
 
@@ -48,12 +55,18 @@ export function createServer<IAPI extends object>(
       , () => DelightRPC.createResponse(
           api
         , request
-        , options.parameterValidators
-        , options.version
+        , {
+            parameterValidators
+          , version
+          }
         )
       )
 
-      reply.status(200).send(response)
+      if (isNull(response)) {
+        reply.status(400).send('The server does not support channel')
+      } else {
+        reply.status(200).send(response)
+      }
     } else {
       reply.status(400).send('The payload is not a valid Delight RPC request.')
     }

@@ -51,8 +51,8 @@ enum Level {
 ```ts
 function createServer<IAPI extends object>(
   api: DelightRPC.ImplementationOf<IAPI>
-, options: {
-    loggerLevel: Level
+, options?: {
+    loggerLevel?: Level = Level.None
   , cors?: boolean = false
   , healthCheckEndpoint?: boolean = false
   , parameterValidators?: DelightRPC.ParameterValidators<IAPI>
