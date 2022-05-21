@@ -14,12 +14,14 @@ export function createServer<IAPI extends object>(
   , cors = false
   , parameterValidators
   , version
+  , ownPropsOnly
   }: {
     loggerLevel?: Level
     cors?: boolean
     healthCheckEndpoint?: boolean
     parameterValidators?: DelightRPC.ParameterValidators<IAPI>
     version?: `${number}.${number}.${number}`
+    ownPropsOnly?: boolean
   } = {}
 ): FastifyInstance {
   const logger = new Logger({
@@ -58,6 +60,7 @@ export function createServer<IAPI extends object>(
         , {
             parameterValidators
           , version
+          , ownPropsOnly
           }
         )
       )

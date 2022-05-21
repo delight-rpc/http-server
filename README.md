@@ -53,10 +53,11 @@ function createServer<IAPI extends object>(
   api: DelightRPC.ImplementationOf<IAPI>
 , options?: {
     loggerLevel?: Level = Level.None
-  , cors?: boolean = false
-  , healthCheckEndpoint?: boolean = false
-  , parameterValidators?: DelightRPC.ParameterValidators<IAPI>
-  , version?: `${number}.${number}.${number}`
+    cors?: boolean = false
+    healthCheckEndpoint?: boolean = false
+    parameterValidators?: DelightRPC.ParameterValidators<IAPI>
+    version?: `${number}.${number}.${number}`
+    ownPropsOnly?: boolean
   }
 ): FastifyInstance
 ```
