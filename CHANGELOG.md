@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.1.1](https://github.com/delight-rpc/http-server/compare/v6.1.0...v6.1.1) (2022-06-21)
+
+
+### Bug Fixes
+
+* the version of peer dependency ([1a05de1](https://github.com/delight-rpc/http-server/commit/1a05de1f919a198f6760dc652b01e71c9ea08608))
+
 ## [6.1.0](https://github.com/delight-rpc/http-server/compare/v6.0.1...v6.1.0) (2022-06-21)
 
 
