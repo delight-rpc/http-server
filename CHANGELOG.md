@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.1.0](https://github.com/delight-rpc/http-server/compare/v6.0.1...v6.1.0) (2022-06-21)
+
+
+### Features
+
+* add channel support ([93e53bb](https://github.com/delight-rpc/http-server/commit/93e53bb79f105fe3d10eb34dcadafc79eb81de99))
+
 ### [6.0.1](https://github.com/delight-rpc/http-server/compare/v6.0.0...v6.0.1) (2022-05-21)
 
 ## [6.0.0](https://github.com/delight-rpc/http-server/compare/v5.1.3...v6.0.0) (2022-05-07)
