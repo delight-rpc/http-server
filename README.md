@@ -58,6 +58,7 @@ function createServer<IAPI extends object>(
     parameterValidators?: DelightRPC.ParameterValidators<IAPI>
     version?: `${number}.${number}.${number}`
     ownPropsOnly?: boolean
+    channel?: string | RegExp | AnyChannel
   }
 ): FastifyInstance
 ```

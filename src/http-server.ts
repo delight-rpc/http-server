@@ -15,6 +15,7 @@ export function createServer<IAPI extends object>(
   , parameterValidators
   , version
   , ownPropsOnly
+  , channel
   }: {
     loggerLevel?: Level
     cors?: boolean
@@ -22,6 +23,7 @@ export function createServer<IAPI extends object>(
     parameterValidators?: DelightRPC.ParameterValidators<IAPI>
     version?: `${number}.${number}.${number}`
     ownPropsOnly?: boolean
+    channel?: string | RegExp | typeof DelightRPC.AnyChannel
   } = {}
 ): FastifyInstance {
   const logger = new Logger({
@@ -61,6 +63,7 @@ export function createServer<IAPI extends object>(
             parameterValidators
           , version
           , ownPropsOnly
+          , channel
           }
         )
       )
