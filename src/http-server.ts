@@ -31,7 +31,7 @@ export function createServer<IAPI extends object>(
   , transport: new TerminalTransport({})
   })
 
-  const server = fastify()
+  const server = fastify({ forceCloseConnections: true })
 
   server.addHook('onRequest', async (req, reply) => {
     reply.headers({ 'Cache-Control': 'no-store' })

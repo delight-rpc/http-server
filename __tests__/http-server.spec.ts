@@ -1,7 +1,7 @@
 import { startService, stopService, getAddress } from '@test/utils'
 import { fetch } from 'extra-fetch'
 import { get, post } from 'extra-request'
-import { url, pathname, json } from 'extra-request/lib/es2018/transformers'
+import { url, pathname, json } from 'extra-request/transformers'
 import { createClient, MethodNotAvailable } from 'delight-rpc'
 import { getErrorPromise } from 'return-style'
 

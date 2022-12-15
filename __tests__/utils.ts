@@ -12,7 +12,7 @@ export async function startService(api: object): Promise<void> {
     loggerLevel: Level.None
   , healthCheckEndpoint: true
   })
-  address = await server.listen(0)
+  address = await server.listen()
 }
 
 export async function stopService(): Promise<void> {
