@@ -1,4 +1,4 @@
-import { createServer, Level } from '@src/http-server'
+import { createServer, Level } from '@src/http-server.js'
 
 let server: ReturnType<typeof createServer>
 let address: string

@@ -1,9 +1,10 @@
-import { startService, stopService, getAddress } from '@test/utils'
+import { startService, stopService, getAddress } from '@test/utils.js'
 import { fetch } from 'extra-fetch'
 import { get, post } from 'extra-request'
 import { url, pathname, json } from 'extra-request/transformers'
 import { createClient, MethodNotAvailable } from 'delight-rpc'
 import { getErrorPromise } from 'return-style'
+import { JSONValue } from '@blackglory/prelude'
 
 interface API {
   echo(message: string): string
@@ -23,7 +24,7 @@ describe('server', () => {
     const client = createClient<API>(async jsonRpc => {
       const res = await fetch(post(
         url(getAddress())
-      , json(jsonRpc)
+      , json(jsonRpc as JSONValue)
       ))
 
       return await res.json()
@@ -38,7 +39,7 @@ describe('server', () => {
     const client = createClient<API>(async jsonRpc => {
       const res = await fetch(post(
         url(getAddress())
-      , json(jsonRpc)
+      , json(jsonRpc as JSONValue)
       ))
 
       return await res.json()
