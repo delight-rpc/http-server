@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.0.1](https://github.com/delight-rpc/http-server/compare/v8.0.0...v8.0.1) (2023-06-11)
+
+
+### Bug Fixes
+
+* export src ([c9042ef](https://github.com/delight-rpc/http-server/commit/c9042efd92c8350f14255027b74369420ac65125))
+
 ## [8.0.0](https://github.com/delight-rpc/http-server/compare/v7.0.0...v8.0.0) (2023-03-19)
 
 
