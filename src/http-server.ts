@@ -33,6 +33,9 @@ export function createServer<IAPI extends object>(
 
   const server = fastify({ forceCloseConnections: true })
 
+  // 移除默认的`text/plain`解析器.
+  server.removeContentTypeParser('text/plain')
+
   server.addHook('onRequest', async (req, reply) => {
     reply.headers({ 'Cache-Control': 'no-store' })
   })
