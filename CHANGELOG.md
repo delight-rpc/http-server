@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.1.0](https://github.com/delight-rpc/http-server/compare/v8.0.1...v8.1.0) (2026-02-15)
+
+
+### Features
+
+* reject `text/plain` request body ([4653a2a](https://github.com/delight-rpc/http-server/commit/4653a2ac6b601932aa38c3ccdbf7e6e22af40d26))
+
 ### [8.0.1](https://github.com/delight-rpc/http-server/compare/v8.0.0...v8.0.1) (2023-06-11)
 
 
