@@ -107,8 +107,6 @@ export function createServer<IAPI extends object>(
       }
     } else if (DelightRPC.isAbort(message)) {
       if (DelightRPC.matchChannel(message, channel)) {
-        console.log('ha')
-
         channelIdToController.get(message)?.abort()
         channelIdToController.delete(message)
 
