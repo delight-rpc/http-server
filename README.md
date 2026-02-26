@@ -26,7 +26,7 @@ const api: IAPI = {
   }
 }
 
-const server = createServer(api, {
+const [server] = createServer(api, {
   loggerLevel: Level.None
 , healthCheckEndpoint: true
 })
@@ -60,5 +60,5 @@ function createServer<IAPI extends object>(
     ownPropsOnly?: boolean
     channel?: string | RegExp | AnyChannel
   }
-): FastifyInstance
+): [server: FastifyInstance, close: () => void]
 ```
