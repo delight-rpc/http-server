@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.0.2](https://github.com/delight-rpc/http-server/compare/v9.0.1...v9.0.2) (2026-08-06)
+
+
+### Bug Fixes
+
+* logging ([ffbab86](https://github.com/delight-rpc/http-server/commit/ffbab86b3f3fbecf2454c47ab7336c2aac439337))
+
 ### [9.0.1](https://github.com/delight-rpc/http-server/compare/v9.0.0...v9.0.1) (2026-02-26)
 
 ## [9.0.0](https://github.com/delight-rpc/http-server/compare/v8.1.0...v9.0.0) (2026-02-26)
