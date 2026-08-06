@@ -72,7 +72,7 @@ export function createServer<IAPI extends object>(
       destructor.defer(() => channelIdToController.delete(message))
 
       try {
-        const response = await logger.infoTime(
+        const response = await logger.infoTimeAsync(
           () => {
             if (DelightRPC.isRequest(message)) {
               return message.method.join('.')
